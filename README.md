@@ -1,6 +1,6 @@
 # Fukads - Fuck ads!
 
-Fukads is a small Ruby script that will help you block ads.  
+Fukads is a small Ruby script **for Linux** that will help you block ads.  
 It works by adding the advertisment servers to your `hosts` file, just like AdAway on Android.
 
 Sources are taken from [AdAway](https://github.com/dschuermann/ad-away)
