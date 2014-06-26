@@ -5,9 +5,10 @@ def root?
 end
 
 def build_hosts
+	dir = File.dirname(__FILE__)
 	hosts_tmp = File.open("/tmp/fukads-hosts" ,"w+")
 
-	File.read("sources.txt").each_line do |source|
+	File.read("#{dir}/sources.txt").each_line do |source|
 		source.strip!
 		puts "Retrieving entries from #{source}"
 		response = HTTParty.get(source)
