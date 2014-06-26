@@ -41,9 +41,23 @@ def install
 	copy_to_system
 end
 
+def restore
+	system "cp /etc/hosts-original /etc/hosts" if File.exist? "/etc/hosts-original"
+end
+
 if root?
-	puts "Installing Fukads"
-	install
+	case ARGV[0]
+	when "install"
+		puts "Installing Fukads"
+		install
+	when "uninstall"
+		puts "Restoring original hosts file"
+		restore
+	else
+		puts "Usage:
+install - install fukads to /etc/hosts
+uninstall - restore the original /etc/hosts"
+	end
 else
 	puts "Must be run as root!"
 end
